@@ -1,0 +1,9 @@
+/* CSS Document */
+.button {
+	display:inline-block;  border: 1px solid #FFAAAA; background: #FFEEEE; color: #FF6666; font-weight:bold;
+	box-shadow: 5px 5px 0px 0 #000; margin: 0 5px 5px 0;
+}
+.button:active { box-shadow:none; margin: 5px 0 0 5px; }
+.button.active { box-shadow:none; margin: 5px 0 0 5px; }
+
+.b-s { padding: 2px 6px; }
