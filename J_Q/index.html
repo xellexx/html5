@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Jquery+Quo</title>
+<script src="js/quo.js"></script>
+<script src="js/jquery-2.1.1.min.js"></script>
+
+
+<style>
+.button {
+	display:inline-block; padding: 2px 6px; border: 1px solid #FFAAAA; background: #FFEEEE; color: #FFAAAA;
+	box-shadow	: 2px 2px 2px #000; margin: 0 2px 2px 0;
+}
+.button:active { box-shadow:none; margin: 2px 0 0 2px; }
+</style>
+
+<script>
+var test = null;
+$(function(){
+	test = $("div#test");
+	$("a#show").click(function() {
+		$("body").wrapInner("<div id='wrap' style='border:1px solid red;'></div");
+	});
+	
+	$("a#show2").click(function() {
+		$("#wrap").children().unwrap();
+	});
+	
+	$("a#remove").click(function() {
+		test.detach();
+	});
+	
+	$("a#recover").click(function() {
+		$("body").prepend(test);
+	});
+	
+});
+
+function goto() {
+	
+}
+
+function goback() {
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div id="page1">
+	<a id="show" class="button">点击</a>
+</div>
+
+<div id="page2">
+	<a id="show2" class="button">点击</a>
+</div>
+
+<div style="margin-top:10px;">
+	<a id="remove" class="button">删除</a> <a id="recover" class="button">回复</a>
+</div>
+
+</body>
+</html>
