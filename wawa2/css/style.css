@@ -86,7 +86,7 @@ i.icon-loc { display: block; position:absolute; width: 15px; height:20px; backgr
 
 .bg-grey {background: #E9E4E1;}
 
-.wrapper {position: relative; height:100%; width: 100%; margin:50px 0 44px 0; overflow:hidden;}
+.wrapper {position: relative; height:100%; width: 100%; margin:48px 0 42px 0; overflow:hidden;}
 /*app head*/
 .ui-head {background: -webkit-gradient(linear, 0 0, 100% 0, from(rgb(185,95,113)), color-stop(0.4, rgb(185,95,113)), to(rgb(248,143,150)) ); 
 			position: fixed; top: 0; width: 100%; z-index:99; color: #FFF; height:50px; }
