@@ -137,11 +137,6 @@ function _load(page, param, isRoot) {
 			_footClick();
 
 			$b.find(".wrapper").css("min-height", window.innerHeight-50);
-			if ($b.find(".wrapper").hasClass("bg-grey")) {
-				$b.addClass("bg-grey");
-			} else {
-				$b.removeClass("bg-grey");
-			}
 			
 			//$b.fadeIn("fast");
 			$b.css("display", "block");
