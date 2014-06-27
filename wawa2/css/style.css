@@ -484,7 +484,7 @@ background-image: url(../images/logo.png); background-repeat:no-repeat; backgrou
 .P6050 li .title .check { left:5px; top: 0; }
 .P6050 li .title label span { line-height: 20px; }
 .P6050 li .info { padding:10px 10px 5px 0; margin:0 15px; }
-.P6050 li .info div { margin-bottom: 5px; }
+.P6050 li .info div { padding-bottom: 6px; }
 .P6050 li .info s { text-decoration:none; color: #888; display:inline-block; word-break:break-all; word-wrap:break-word; font-size:12px; }
 .P6050 li .info s.call { padding-left: 25px; position:relative; width:80px; float:right; padding-top:3px; }
 .P6050 li .info s.call:before { display: block; position:absolute; content:""; left:0; top:0; width:20px; height: 20px; background: url(../images/call.png); background-size:100% 100%; }
