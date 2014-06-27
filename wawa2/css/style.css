@@ -482,6 +482,7 @@ background-image: url(../images/logo.png); background-repeat:no-repeat; backgrou
 .P6050 li { position:relative; background:#FFF; border-radius: 4px; padding:10px 10px 5px 10px; margin-bottom:10px; -webkit-box-shadow:0 0 10px 1px #CCC; overflow:hidden; }
 .P6050 li .title { padding: 0 0 10px 35px; border-bottom: 1px solid #EEE; position:relative; }
 .P6050 li .title .check { left:5px; top: 0; }
+.P6050 li .title label span { line-height: 20px; }
 .P6050 li .info { padding:10px 10px 5px 0; margin:0 15px; }
 .P6050 li .info div { margin-bottom: 5px; }
 .P6050 li .info s { text-decoration:none; color: #888; display:inline-block; word-break:break-all; word-wrap:break-word; font-size:12px; }
