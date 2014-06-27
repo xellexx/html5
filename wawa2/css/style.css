@@ -103,7 +103,7 @@ i.icon-loc { display: block; position:absolute; width: 15px; height:20px; backgr
 .ui-head li.left { text-align:left; padding-left: 10px;}
 .ui-head li.left s { position:absolute; display:block; top: 2px; left: 30px;}
 .ui-head li.right { text-align:right; padding-right: 12px;}
-.ui-head li.title { text-align:center; -webkit-box-flex: 2; box-flex: 2; font-size: 16px; line-height: 20px; }
+.ui-head li.title { text-align:center; -webkit-box-flex: 2; box-flex: 2; font-size: 18px; line-height: 20px; }
 
 /*foot menu*/
 .ui-foot { background: -webkit-gradient(linear, 0 0, 100% 0, from(rgb(233, 159, 161)), color-stop(0.3, rgb(233, 169, 161)), color-stop(0.4, rgb(250,186,161)), color-stop(0.7, rgb(248,143,150)), color-stop(0.8, rgb(229, 134, 138)), to(rgb(229, 134, 138)) ); 
