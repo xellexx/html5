@@ -2,13 +2,14 @@
 
 
 <div id="start" class="bg-head hide" style="position:fixed; top:0; left:0; bottom:0; right:0; z-index:1000; text-align:center;opacity:1;">
+	<img src='images/start-wawa.png' style='margin-top:10%; width:100px; height:300px; opacity:0;' />
 </div>
 <script>
 start.style["background-image"] = "url(images/start.png)";
 start.style["background-size"] = "100% 100%";
 </script>
 
-<div class="ui-head hide">
+<div class="ui-head" style="display:none">
 	<ul>
     	<li class="left"><i class="icon-back"></i><s>返回</s></li>
 		<li class="title">粉红大布娃娃</li>
@@ -16,7 +17,7 @@ start.style["background-size"] = "100% 100%";
     </ul>
 </div>
 
-<div class="wrapper hide">
+<div class="wrapper"  style="display:none">
 
 	<div class="ui-body P1010 ">
     	<div class="home-first">
@@ -65,7 +66,7 @@ start.style["background-size"] = "100% 100%";
     </div>
 </div>
 
-<div class="ui-foot hide">
+<div class="ui-foot" style="display:none">
     <ul>
         <li id="footHome" class="active"> <i class="icon-mask icon-home"></i><s>首页</s> </li>
         <li id="footSearch"> <i class="icon-search"></i><s>找美丽</s> </li>
@@ -125,21 +126,20 @@ function onLoad() {
 		function fnCloseStart() {
 			
 			var s = $("#start");
-			$("#start").removeClass("hide");
-			s.append("<img src='images/start-wawa.png' style='margin-top:10%; width:100px; height:300px; opacity:0;' />")
+			$("#start").attr("display", "");
 
-			$(".ui-head,.wrapper,.ui-foot").removeClass("hide");
+			$(".ui-head,.wrapper,.ui-foot").attr("display", "");
 			
-			s.find("img").ani({"margin-top":"70%", opacity:0.6}, 4500);
-			s.ani({opacity:0}, 4000, function(){
+			s.find("img").ani({"margin-top":"70%", opacity:0.6}, 3500);
+			s.ani({opacity:0}, 3000, function(){
 				s.remove();
 			}, "ease-out-in")
 	
 		}
-		setTimeout(fnCloseStart, 5);
+		setTimeout(fnCloseStart, 1000);
 	}
 	else {
-		$(".ui-head,.wrapper,.ui-foot").removeClass("hide");
+		$(".ui-head,.wrapper,.ui-foot").attr("display", "");
 		$("#start").remove()
 	}
 }
