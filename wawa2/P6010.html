@@ -1,0 +1,75 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<div class="ui-head">
+	<ul>
+    	<li class="left" onclick="_back();"><i class="icon-back"></i><s>返回</s></li>
+		<li class="title">会员卡</li>
+    	<li class="right"><i class="icon-camara"></i></li>
+    </ul>
+</div>
+
+<div class="wrapper bg-grey" >
+	<div class="ui-body P6010 ">
+		<div class="center paddingtb15">
+        	<div class="vip-card center">
+            	<h1>白金卡</h1>
+                <p>卡号：<span>1234 5678 9012 3456</span></p>
+            </div>
+        </div>
+        
+        <div class="paddinglr15">
+        	<ul class="ui-block">
+            	<li id="liPerson" class="icon icon-info next end">
+                	完善资料，享受会员特权
+                </li>
+            </ul>
+            
+			<ul class="ui-block">
+            	<li class="icon icon-my-right">
+                	我的权益
+                </li>
+                <li id="liGotoBuy" class="next">
+                	折扣: <span class="ui-color-pink">购物享9.8折</span>
+                    <span class="f_right">去购物</span>
+                </li>
+                <li id="liBirth" class="next">
+                	特权: <span class="ui-color-pink">生日三倍积分</span>
+                    <span class="f_right">填写</span>
+                </li>
+                <li class="end" >
+                	积分: <span class="ui-color-pink">1000分</span>
+                </li>
+            </ul>
+            
+        	<ul class="ui-block">
+            	<li id="liShopList" class="icon icon-loc next end">
+                	门店地址
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="ui-foot">
+    <ul>
+        <li id="footHome"> <i class="icon-home"></i><s>首页</s> </li>
+        <li id="footSearch"> <i class="icon-search"></i><s>找美丽</s> </li>
+        <li id="footChart"> <i class="icon-chart"></i><s>购物车</s> </li>
+        <li id="footUser" class="active"> <i class="icon-user"></i><s>娃娃家</s> </li>
+        <li id="footGift"> <i class="icon-gift"></i><s>享惊喜</s> </li>
+    </ul>
+</div>
+<script>
+$(function(){
+	
+	$("#liPerson,#liBirth").on(_CLICK, function(){
+		_load("P6020");
+	})
+	
+	$("#liGotoBuy").on(_CLICK, function(){
+		_loadRoot("P3010");
+	})
+	
+	$("#liShopList").on(_CLICK, function(){
+		_loadRoot("P6071");
+	})
+})
+</script>

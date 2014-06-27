@@ -1,0 +1,67 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<div class="ui-head">
+	<ul>
+    	<li class="left" onclick="_back();"><i class="icon-back"></i><s>返回</s></li>
+		<li class="title">粉红大布娃娃</li>
+    	<li class="right"><i class="icon-qr"></i></li>
+    </ul>
+</div>
+
+<div class="wrapper bg-grey" >
+	<div class="ui-body P6030 ">
+    	<ul class="msg-list">
+        	<li>
+                <span class="msg-head">订单消息<br />2014-04-30<br />10:30</span>
+                <div>
+                	<h2>
+                    	您的订单发货啦！
+                    </h2>
+                    <p>
+                    	您的订单230140613021358956[蓝色豪华皮草大衣...]已经发货！请注意查收！
+                        您的订单230140613021358956[蓝色豪华皮草大衣...]已经发货！请注意查收！
+                        您的订单230140613021358956[蓝色豪华皮草大衣...]已经发货！请注意查收！
+                        您的订单230140613021358956[蓝色豪华皮草大衣...]已经发货！请注意查收！
+                        您的订单230140613021358956[蓝色豪华皮草大衣...]已经发货！请注意查收！
+                        您的订单230140613021358956[蓝色豪华皮草大衣...]已经发货！请注意查收！
+                        您的订单230140613021358956[蓝色豪华皮草大衣...]已经发货！请注意查收！
+                        您的订单230140613021358956[蓝色豪华皮草大衣...]已经发货！请注意查收！
+                    </p>
+                </div>
+                <s><i class="a-c-down"></i></s>
+            </li>
+            
+        	<li>
+                <span class="msg-head">订单消息<br />2014-04-30<br />10:30</span>
+                <div>
+                	<h2>
+                    	您的订单发货啦！
+                    </h2>
+                    <p>
+                    	您的订单230140613021358956[蓝色豪华皮草大衣...]已经发货！请注意查收！
+                    </p>
+                </div>
+                <s><i class="a-c-down"></i></s>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="ui-foot">
+    <ul>
+        <li id="footHome"> <i class="icon-home"></i><s>首页</s> </li>
+        <li id="footSearch"> <i class="icon-search"></i><s>找美丽</s> </li>
+        <li id="footUser"> <i class="icon-user"></i><s>娃娃家</s> </li>
+        <li id="footGift"> <i class="icon-gift"></i><s>享惊喜</s> </li>
+    </ul>
+</div>
+
+<script>
+$(function(){
+
+	$(".msg-list s").one(_CLICK, function(){
+		var li = $(this).closest("li");
+		li.toggleClass("selected");
+		//li.find("p").ani({"height": "100%"}, "fast");
+	})
+	
+})
+</script>

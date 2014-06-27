@@ -1,0 +1,52 @@
+<div class="ui-head">
+    <ul>
+        <li class="left" onclick="_back();"><i class="icon-back"></i><s>返回</s></li>
+        <li class="title">注册</li>
+        <li class="right">登录</li>
+    </ul>
+</div>
+
+<div class="wrapper bg-grey">
+    <div class="ui-body P2010 ">
+        <ul class="ui-block marginlr15">
+            <li class="icon icon-phone-num">
+                <input type="text" maxlength="11" placeholder="请输入手机号" />
+                <a class="button f_right button-s">短信获取密码</a>
+            </li>
+            <li class="icon icon-pass end">
+                <input type="password" placeholder="请输入密码" />
+            </li>    
+        </ul>
+        <ul class="agreement marginlr15">
+            <li>
+                <i class="read"></i>
+                <span>我已阅读并同意
+                    <s  style="text-decoration:none;color:#f03a98; ">《粉红大布娃娃用户协议》</s>
+                </span>
+            </li>
+        </ul>
+            
+        <div class="ctn margint30 marginlr15">
+            <a class="button button-foot marginb10">注册</a>
+        </div>
+    </div>
+</div>
+
+<div class="ui-foot">
+    <ul>
+        <li id="footHome"> <i class="icon-home"></i><s>首页</s> </li>
+        <li id="footSearch"> <i class="icon-search"></i><s>找美丽</s> </li>
+        <li id="footChart"> <i class="icon-chart"></i><s>购物车</s> </li>
+        <li id="footUser"> <i class="icon-user"></i><s>娃娃家</s> </li>
+        <li id="footGift"> <i class="icon-gift"></i><s>享惊喜</s> </li>
+    </ul>
+</div>
+<script>
+$(function(){
+	
+	$(".read").on(_CLICK, function(){
+		$(this).toggleClass("readed");
+	})
+})
+
+</script>

@@ -1,0 +1,157 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<div class="ui-head">
+	<ul>
+    	<li class="left" onclick="_back();"><i class="icon-back"></i><s>返回</s></li>
+		<li class="title">购物车</li>
+    	<li class="right"><i class="icon-qr"></i></li>
+    </ul>
+</div>
+
+<div class="wrapper" style="margin-bottom:111px;">
+	<div class="ui-body P4010 ">
+    	<ul class="cart-list">
+        	<li class="cart-row">
+            	<i class="check"></i>
+                <img src="images/goods-demo.png" />
+                <div class="desc">
+                	<p>
+                        <div class="name">花卉人物印花斜肩不规则T恤</div>
+                        <div>规格： <span>白色 / 尺码： S</span></div>
+                        <div>价格： <s class="s-price">￥ 8888.00</s></div>
+                    </p>
+                    <div>数量&nbsp;&nbsp;
+                    	<span class="num-select">
+                        	<span class="add">+</span><span class="sum" _max="5" >1</span><span class="sub">-</span>
+                        </span>
+                    </div>
+                    <i class="trash"></i>
+                </div>
+                <i class="a-right"></i>
+            </li>
+        	<li class="cart-row">
+            	<i class="check"></i>
+                <img src="images/goods-demo.png" />
+                <div class="desc">
+                	<p>
+                        <div class="name">花卉人物印花斜肩不规则T恤11111111</div>
+                        <div>规格： <span>白色 / 尺码： S</span></div>
+                        <div>价格： <s class="s-price">￥ 8888.00</s></div>
+                    </p>
+                    <div>数量&nbsp;&nbsp;
+                    	<span class="num-select">
+                        	<span class="add">+</span><span class="sum">0</span><span class="sub">-</span>
+                        </span>
+                    </div>
+                    <i class="trash"></i>
+                </div>
+                <i class="a-right"></i>
+            </li>
+            <li class="cart-row">
+            	<i class="check"></i>
+                <img src="images/goods-demo.png" />
+                <div class="desc">
+                	<p>
+                        <div class="name">花卉人物印花斜肩不规则T恤</div>
+                        <div>规格： <span>白色 / 尺码： S</span></div>
+                        <div>价格： <s class="s-price">￥ 8888.00</s></div>
+                    </p>
+                    <div>数量&nbsp;&nbsp;
+                    	<span class="num-select">
+                        	<span class="add">+</span><span class="sum" _max="5" >1</span><span class="sub">-</span>
+                        </span>
+                    </div>
+                    <i class="trash"></i>
+                </div>
+                <i class="a-right"></i>
+            </li>
+            <li class="cart-row">
+            	<i class="check"></i>
+                <img src="images/goods-demo.png" />
+                <div class="desc">
+                	<p>
+                        <div class="name">花卉人物印花斜肩不规则T恤</div>
+                        <div>规格： <span>白色 / 尺码： S</span></div>
+                        <div>价格： <s class="s-price">￥ 8888.00</s></div>
+                    </p>
+                    <div>数量&nbsp;&nbsp;
+                    	<span class="num-select">
+                        	<span class="add">+</span><span class="sum" _max="5" >1</span><span class="sub">-</span>
+                        </span>
+                    </div>
+                    <i class="trash"></i>
+                </div>
+                <i class="a-right"></i>
+            </li>
+            <li class="cart-row">
+            	<i class="check"></i>
+                <img src="images/goods-demo.png" />
+                <div class="desc">
+                	<p>
+                        <div class="name">花卉人物印花斜肩不规则T恤</div>
+                        <div>规格： <span>白色 / 尺码： S</span></div>
+                        <div>价格： <s class="s-price">￥ 8888.00</s></div>
+                    </p>
+                    <div>数量&nbsp;&nbsp;
+                    	<span class="num-select">
+                        	<span class="add">+</span><span class="sum" _max="5" >1</span><span class="sub">-</span>
+                        </span>
+                    </div>
+                    <i class="trash"></i>
+                </div>
+                <i class="a-right"></i>
+            </li>
+            
+            <li class="cart-broad-cast">
+            	<i class="icon-broad-cast"></i>全场满100元免运费
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="ui-foot ui-foot2 P4010-foot">
+    <div class="ctn">
+    	<ul class="allprice">
+        	<li class="li-check"><i class="check"></i><span>全选</span></li>
+            <li class="li-allprice">金额： <b>￥ 8888.80</b></li>
+        </ul>
+        
+        <a class="button button-foot">立即结算</a>
+    </div>
+</div>
+
+<script>
+$(function(){
+	$(".a-right").on(_CLICK, function(){
+		_load("P3030");
+	});
+	
+	var clc = $(".cart-list").find(".check");
+	var allc = $(".allprice .check");
+	clc.on(_CLICK, function(){
+		var t = $(this);
+		t.toggleClass("checked");
+
+		if (clc.filter(":not(.checked)").length > 0) {
+			allc.removeClass("checked");
+		} else {
+			allc.addClass("checked");
+		}
+	});
+	
+	allc.add(allc.next("span")).on(_CLICK, function(){
+		allc.toggleClass("checked");
+		
+		if (allc.hasClass("checked")) {
+			clc.addClass("checked");
+		} else {
+			clc.removeClass("checked");
+		}
+	});
+	
+	$("a.button-foot").on(_CLICK, function(){
+		_load("P4020");
+	})
+	
+	__initNum();
+})
+</script>

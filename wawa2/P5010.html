@@ -1,0 +1,47 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<div class="ui-head">
+	<ul>
+    	<li class="left" onclick="_back();"><i class="icon-back"></i><s>返回</s></li>
+		<li class="title">活动列表</li>
+    	<li class="right"><i class="icon-qr"></i></li>
+    </ul>
+</div>
+
+<div class="wrapper bg-grey">
+	<div class="ui-body P5010 ">
+		<ul>
+        	<li>
+            	<h2>盛夏上新低至2.9折起<span>即将开始</span></h2>
+                <div><img src="images/active-1.jpg" /></div>
+            </li>
+            
+            <li>
+            	<h2>新品优惠5折起<span>活动进行中</span></h2>
+                <div><img src="images/active-2.jpg" /></div>
+            </li>
+            
+            <li>
+            	<h2>天猫T恤节满288减50<span>活动进行中</span></h2>
+                <div><img src="images/active-3.jpg" /></div>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<div class="ui-foot">
+    <ul>
+        <li id="footHome"> <i class="icon-home"></i><s>首页</s> </li>
+        <li id="footSearch"> <i class="icon-search"></i><s>找美丽</s> </li>
+        <li id="footChart"> <i class="icon-chart"></i><s>购物车</s> </li>
+        <li id="footUser"> <i class="icon-user"></i><s>娃娃家</s> </li>
+        <li id="footGift" class="active"> <i class="icon-gift"></i><s>享惊喜</s> </li>
+    </ul>
+</div>
+<script>
+$(function(){
+	$(".P5010 li").on(_CLICK, function(){
+		_load("P5020");
+	})
+})
+</script>

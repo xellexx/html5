@@ -1,0 +1,68 @@
+<div class="ui-head">
+    <ul>
+        <li class="left" onclick="_back();"><i class="icon-back"></i><s>返回</s></li>
+        <li class="title">登录</li>
+        <li class="right">注册</li>
+    </ul>
+</div>
+
+<div class="wrapper bg-grey" >
+    <div class="ui-body P2020 ">
+        <ul class="ui-block marginlr15">
+            <li > 账号：
+                <input type="text" maxlength="11" placeholder="请输入手机号/会员卡号" />    
+            </li>
+            <li class="end" >密码：
+                <input type="password" placeholder="请输入密码" />
+                <a class="button f_right button-s">忘记密码</a>
+            </li>    
+        </ul>
+
+          
+        <div class="ctn margint30 marginlr15">
+            <a class="button button-foot marginb10">登录</a>
+        </div>
+    
+        <div class="th3-part">
+            <div class="other marginlr15">
+                <span  class="othername">或用以下方式快速登录</span> 
+            </div>
+        
+            <div class="th3-part-login marginlr15">   
+                <ul>
+                    <li>
+                        <i class="icon-login login1"></i>
+                        <s>腾讯QQ</s>
+                    </li>
+                    <li>
+                        <i class="icon-login login2"></i>
+                        <s>微信</s>
+                    </li>
+                    <li>
+                        <i class="icon-login login3"></i>
+                        <s>新浪微博</s>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ui-foot">
+    <ul>
+        <li id="footHome"> <i class="icon-home"></i><s>首页</s> </li>
+        <li id="footSearch"> <i class="icon-search"></i><s>找美丽</s> </li>
+        <li id="footChart"> <i class="icon-chart"></i><s>购物车</s> </li>
+        <li id="footUser"> <i class="icon-user"></i><s>娃娃家</s> </li>
+        <li id="footGift"> <i class="icon-gift"></i><s>享惊喜</s> </li>
+    </ul>
+</div>
+<script>
+$(function(){
+	
+	$(".ui-head li.right").on(_CLICK, function(){
+		_load("P2010");
+	});
+})
+
+</script>

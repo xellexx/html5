@@ -1,0 +1,122 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<div class="ui-head">
+	<ul>
+    	<li class="left" onclick="_back();"><i class="icon-back"></i><s>返回</s></li>
+		<li class="title">收货地址</li>
+    	<li class="right"></li>
+    </ul>
+</div>
+
+<div class="wrapper bg-grey" style=" margin-bottom:70px;">
+	<div class="ui-body P6050 ">
+		<ul>
+        	<li class="selected">
+            	<div class="title">
+                	<label><i class="check checked"></i>
+                    <span>默认地址</span></label>
+                    <s><i class="trash"></i>删除</s>
+                    <s id="btnEdit"><i class="icon-edit"></i>编辑</s>
+                </div>
+                <div class="info">
+                	<div>
+                    	收件人：<s>张三1</s>
+                    	<s class="call">15812345678</s>
+                    </div>
+                    <div>
+	                    地址：<s class="address">上海市虹口区四川北路1000号上海市虹口区四川北路1000号上海市虹口区四川北路1000号上海市虹口区四川北路1000号上海市虹口区四川北路1000号</s>
+                    </div>
+                    <i class="a-right"></i>
+                </div>
+            </li>
+        	<li>
+            	<div class="title">
+                	<label><i class="check"></i>
+                    <span>设为默认地址</span></label>
+                    <s><i class="trash"></i>删除</s>
+                    <s id="btnEdit"><i class="icon-edit"></i>编辑</s>
+                </div>
+                <div class="info">
+                	<div>
+                    	收件人：<s>张三2</s>
+                    	<s class="call">15812345678</s>
+                    </div>
+                    <div>
+	                    地址：<s class="address">上海市虹口区四川北路1000号</s>
+                    </div>
+                    <i class="a-right"></i>
+                </div>
+            </li>
+            <li>
+            	<div class="title">
+                	<label><i class="check"></i>
+                    <span>设为默认地址</span></label>
+                    <s><i class="trash"></i>删除</s>
+                    <s id="btnEdit"><i class="icon-edit"></i>编辑</s>
+                </div>
+                <div class="info">
+                	<div>
+                    	收件人：<s>张三3</s>
+                    	<s class="call">15812345678</s>
+                    </div>
+                    <div>
+	                    地址：<s class="address">上海市虹口区四川北路1000号</s>
+                    </div>
+                    <i class="a-right"></i>
+                </div>
+            </li>
+            <li>
+            	<div class="title">
+                	<label><i class="check"></i>
+                    <span>设为默认地址</span></label>
+                    <s><i class="trash"></i>删除</s>
+                    <s id="btnEdit"><i class="icon-edit"></i>编辑</s>
+                </div>
+                <div class="info">
+                	<div>
+                    	收件人：<s>张三4</s>
+                    	<s class="call">15812345678</s>
+                    </div>
+                    <div>
+	                    地址：<s class="address">上海市虹口区四川北路1000号</s>
+                    </div>
+                    <i class="a-right"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="ui-foot ui-foot2 P6050-foot">
+    <div class="ctn">
+        <a class="button button-foot">添加地址</a>
+    </div>
+</div>
+<script>
+$(function(){	
+	$(".P6050 li label").on(_CLICK, function() {
+		var t = $(this).find(".check");
+		var li = t.closest("li");
+		
+		if (li.hasClass("selected")) {
+			return;
+		}
+		
+		var s = $(".P6050 li.selected");
+		
+		if (s.length > 0) {
+			s.find(".check").removeClass("checked");
+			s.removeClass("selected");
+			s.find(".title span").text("设为默认地址");
+		}
+		
+		li.addClass("selected");
+		li.find(".title span").text("默认地址");
+		t.addClass("checked");
+		$(".P6050 ul").prepend(li);
+	})
+	
+	$(".P6050 li #btnEdit").on(_CLICK, function() {
+		_load("P6051");
+	});
+	
+})
+</script>

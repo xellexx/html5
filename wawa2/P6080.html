@@ -1,0 +1,73 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<div class="ui-head">
+    <ul>
+        <li class="left" onclick="_back();"><i class="icon-back"></i><s>返回</s></li>
+        <li class="title">粉红大布娃娃</li>
+        <li class="right"><i class="icon-qr"></i></li>
+    </ul>
+</div>
+
+<div class="wrapper" >
+    <div class="ui-body P6080 ">
+		<ul class="store-list">
+			<li>
+                <div class="title">
+                    <span>凯德虹口龙之梦店 </span> 
+                    <s>距离：1.2km</s>
+                </div>
+				<img src="images/store.png" />
+            	<div class="desc">
+                	<i class="icon-client-phone"></i>
+                    <i class="icon-loc"></i>
+                    <div ><span>电 话：</span><p>021-61076672</p></div>
+                    <div ><span>地 址： </span><p>上海市虹口区江湾弯路388号A03-26</p></div>
+                    <div ><span>营 业：</span><p>09:00-22:00</p></div>
+            	</div>
+				<p class="action">即日起至5月底，凡到店消费满388元，立减50元，会员双倍积分哦!</p>
+                <div class="hide">
+                	<p class="action">即日起至5月底，凡到店消费满388元，立减50元，会员双倍积分哦!</p>
+                    <p class="action">即日起至5月底，凡到店消费满388元，立减50元，会员双倍积分哦!</p>
+                    <p class="action">即日起至5月底，凡到店消费满388元，立减50元，会员双倍积分哦!</p>
+                </div>
+        		<s class="store-down"><i class="a-c-down"></i></s>
+			</li>
+            
+			<li>
+                <div class="title">
+                    <span>凯德中山公园龙之梦店 </span> 
+                    <s>距离：5.5km</s>
+                </div>
+				<img src="images/store.png" />
+            	<div class="desc">
+                	<i class="icon-client-phone"></i>
+                    <i class="icon-loc"></i>
+                    <div ><span>电 话：</span><p>021-52897229</p></div>
+                    <div ><span>地 址： </span><p>上海市长宁区长宁路1018号3087</p></div>
+                    <div ><span>营 业：</span><p>09:00-22:00</p></div>
+            	</div>
+				<p class="action">即日起至5月底，凡到店消费满388元，立减50元，会员双倍积分哦!</p>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="ui-foot">
+    <ul>
+        <li id="footHome"> <i class="icon-home"></i><s>首页</s> </li>
+        <li id="footSearch"> <i class="icon-search"></i><s>找美丽</s> </li>
+        <li id="footChart"> <i class="icon-chart"></i><s>购物车</s> </li>
+        <li id="footUser" > <i class="icon-user"></i><s>娃娃家</s> </li>
+        <li id="footGift"> <i class="icon-gift"></i><s>享惊喜</s> </li>
+    </ul>
+</div>
+<script>
+$(function(){
+    $(".store-list s").on(_CLICK, function(){
+		$(this).prev("div").slideToggle();
+		$(this).find("i").toggleClass("a-c-down").toggleClass("a-c-up")
+    })
+});
+</script>
+
+

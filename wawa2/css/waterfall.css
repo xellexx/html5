@@ -1,0 +1,22 @@
+﻿@charset "utf-8";
+/*字体(unicode)：宋体(\5B8B\4F53)黑体(\9ED1\4F53)微软雅黑(\5FAE\8F6F\96C5\9ED1)*/
+/* 瀑布流样式 */
+.waterfall { overflow: hidden; zoom: 1; width: 100%; }
+.wf_inner { }
+.wf_col { position: relative; min-height: 473px; _height: 473px; margin: 4px;  }
+.wf_item { box-sizing: border-box; width: 45%; border: 1px solid #d2d2d2; /*box-shadow: 5px 3px 3px rgba(221,221,221,.32);*/ color: #565656; float: left; overflow: hidden; zoom: 1; position: absolute; }
+.wf_item_inner { }
+.wf_item .thumb { background: #E9E9E9; position: relative; display: block; overflow: hidden; font-size: 0; }
+.wf_item .thumb_img { width: 100%; max-width: 100%; -ms-interpolation-mode: bicubic;/*解决IE7缩放图片会失真*/ }
+.wf_item .title { height: 27px; margin: 7px 0 0; color: #538700; font-size: 17px; font-family: \5FAE\8F6F\96C5\9ED1; }
+.wf_item .title a { color: #060; }
+.wf_item .desc { word-wrap: break-word; word-break: break-all; color: #888; background: #fff; padding: 10px; }
+.wf_result { height: 32px; line-height: 32px; margin-top: 5px; text-align: center; color: #666; }
+.wf_loading { background: url(../images/loading.gif) center center no-repeat; }
+.waterfall .price {display:block; position:absolute; border-radius:0 0 2px 0; top:0; left:0; padding:4px 4px; background:rgba(0,0,0,.6); font-family:Arial; font-size:12px; color:#fff; }
+.wf_item .desc span{ display:block; margin-bottom:8px;}
+.waterfall s, .waterfall b {display:block;font-family:Arial; font-size:12px; }
+.waterfall b{color:#E591BB}
+.waterfall s{ margin-bottom:4px;  }
+.backToTop {width:45px; height:45px; border-radius:8px; background: url(../images/up.png) no-repeat left bottom;background-size: 100% 100%; }
+/* end 瀑布流样式 */

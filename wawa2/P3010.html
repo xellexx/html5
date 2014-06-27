@@ -1,0 +1,133 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<div class="ui-head">
+	<ul>
+    	<li class="left"><i class="icon-back"></i><s>返回</s></li>
+		<li class="title">找美丽</li>
+    	<li class="right"><i class="icon-qr"></i></li>
+    </ul>
+</div>
+
+<div class="wrapper">
+
+	<div class="ui-body P3010">
+    	<div class="search-bar">
+        	<input class="search-txt" type="search" placeholder="Search" /><a class="button search-btn">Go</a>
+        </div>
+        <div class="search-list"> 
+        	<div class="search-list-item all">
+            	<span class="entry">全部商品 >></span>
+            </div>
+            <div class="search-list-item hot">
+            	<span class="entry">爆款推荐 >></span>
+            </div>
+            <div class="search-list-item new-one">
+            	<span class="entry">最新单品 >></span>
+            </div>
+            <div class="search-list-item submenu" style="background-image: url(./images/search-4.png);">
+            	<span class="menu">上装</span>
+                <span class="item">衬衫 / T恤 / 针织衫 / 卫衣 / 西装</span>
+            </div>
+            <div class="search-list-item submenu2 hide">
+                <ul>
+                    <li class="center">
+                        <i style="background-image:url(./images/search-1-1.png);"></i>
+                        <s>衬衫</s>
+                    </li>
+                    <li class="center">
+                        <i style="background-image:url(./images/search-1-2.png);"></i>
+                        <s>T恤</s>
+                    </li>
+                    <li class="center">
+                        <i style="background-image:url(./images/search-1-3.png);"></i>
+                        <s>针织衫</s>
+                    </li>
+                    <li class="center">
+                        <i style="background-image:url(./images/search-1-4.png);"></i>
+                        <s>卫衣</s>
+                    </li>
+                </ul>
+                <ul class="box1" >
+                    <li class="center">
+                        <i style="background-image:url(./images/search-1-5.png);"></i>
+                        <s>毛衫</s>
+                    </li>
+                    <li class="center">
+                        <i style="background-image:url(./images/search-1-6.png);"></i>
+                        <s>西装</s>
+                    </li>
+                    <li class="center">
+                        <i style="background-image:url(./images/search-1-7.png);"></i>
+                        <s>外套</s>
+                    </li>
+                </ul>
+            </div>
+            <div class="search-list-item submenu" style="background-image: url(./images/search-5.png);">
+            	<span class="menu">下装</span>
+                <span class="item">裤装 / 打底裤</span>
+            </div>
+            <div class="search-list-item submenu2 hide">
+            </div>
+            <div class="search-list-item submenu" style="background-image: url(./images/search-6.png);">
+            	<span class="menu">裙装</span>
+                <span class="item">连衣裙 / 半裙</span>
+            </div>
+            <div class="search-list-item submenu2  hide">
+            </div>
+            <div class="search-list-item submenu" style="background-image: url(./images/search-7.png);">
+            	<span class="menu">搭配单品</span>
+                <span class="item">围巾 / 鞋子 / 饰品</span>
+            </div>
+            <div class="search-list-item submenu2  hide">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ui-foot">
+    <ul>
+        <li id="footHome"> <i class="icon-home"></i><s>首页</s> </li>
+        <li id="footSearch" class="active"> <i class="icon-search"></i><s>找美丽</s> </li>
+        <li id="footChart"> <i class="icon-chart"></i><s>购物车</s> </li>
+        <li id="footUser"> <i class="icon-user"></i><s>娃娃家</s> </li>
+        <li id="footGift"> <i class="icon-gift"></i><s>享惊喜</s> </li>
+    </ul>
+</div>
+
+<script>
+var m_inAni = false;
+$(function(){
+	
+	$(".submenu2 li").on(_CLICK, function(){
+		_load("P3020");
+
+	})
+	
+	$(".submenu").on(_CLICK, function(){
+		if (m_inAni) return;
+		m_inAni = true;
+		
+		try {
+			var thisT = $(this);
+			if (thisT.attr("act")==="true") {
+				thisT.removeAttr("act")
+				$(".submenu2").slideUp("fast");
+				return;
+			};
+			
+			var old = $(".submenu2");
+			if (old.length>0) {
+				old.slideUp("fast");
+			}
+			$(".submenu[act='true']").removeAttr("act");
+			
+			var tD = $(this).next(".submenu2");
+			thisT.attr("act", "true");
+			tD.slideDown("fast");
+		}
+		finally {
+			m_inAni = false;
+		}
+	})
+})
+</script>
+

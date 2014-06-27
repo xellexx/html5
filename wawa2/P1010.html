@@ -1,0 +1,149 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<div id="start" class="bg-head hide" style="position:fixed; top:0; left:0; bottom:0; right:0; z-index:1000; text-align:center;opacity:1;">
+</div>
+<script>
+start.style["background-image"] = "url(images/start.png)";
+start.style["background-size"] = "100% 100%";
+</script>
+
+<div class="ui-head hide">
+	<ul>
+    	<li class="left"><i class="icon-back"></i><s>返回</s></li>
+		<li class="title">粉红大布娃娃</li>
+    	<li class="right"><i class="icon-message"></i></li>
+    </ul>
+</div>
+
+<div class="wrapper hide">
+
+	<div class="ui-body P1010 ">
+    	<div class="home-first">
+        	<img src="images/home-first.jpg" width="100%" />
+        </div>
+        
+
+        <div class="home-entry">
+            <ul>
+                <li id="liAll">
+                    <i style="background-image:url(images/home-1.png)"></i>
+                    <s>全新商品</s>
+                </li>
+                <li id="liWeekNew">
+                    <i style="background-image:url(images/home-2.png)"></i>
+                    <s>每周上新</s>
+                </li>
+                <li id="liHot">
+                    <i style="background-image:url(images/home-3.png)"></i>
+                    <s>爆款推荐</s>
+                </li>
+                <li id="liShop">
+                    <i style="background-image:url(images/home-4.png)"></i>
+                    <s>门店查询</s>
+                </li>
+                <li id="liCoupon">
+                    <i style="background-image:url(images/home-5.png)"></i>
+                    <s>优惠券</s>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="home-list">
+            <ul>
+                <li id="liHot" class="first">
+                    爆 款 推 荐　>>
+                </li>
+                <li id="liAll" class="second">
+                    当 季 热 卖　>></b>
+                </li>
+                <li id="liWeekNew" class="third">
+                    新 品 推 荐　>>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="ui-foot hide">
+    <ul>
+        <li id="footHome" class="active"> <i class="icon-mask icon-home"></i><s>首页</s> </li>
+        <li id="footSearch"> <i class="icon-search"></i><s>找美丽</s> </li>
+        <li id="footChart"> <i class="icon-chart"></i><s>购物车</s> </li>
+        <li id="footUser"> <i class="icon-user"></i><s>娃娃家</s> </li>
+        <li id="footGift"> <i class="icon-gift"></i><s>享惊喜</s> </li>
+    </ul>
+</div>
+<script>
+
+function init() {
+	var ww = window.innerWidth;
+	var wh = window.innerHeight;
+	
+	//大图
+	var homef = document.querySelector(".home-first > img")
+	homef.style["height"]=ww/1.8+"px";
+	
+	//中间入口
+	var is = document.querySelectorAll(".home-entry i");
+	var ew = ww/6-2+"px";
+	for(var i=0; i<is.length; i++){
+		is[i].style["width"] = ew;
+		is[i].style["height"] = ew;
+	}
+
+	//下面入口
+	var hh = Math.floor(ww/4.65);
+	$(".home-list li").height(hh);
+	$(".home-list li").css("line-height", hh+"px");
+	
+	$(".ui-head li.right").on(_CLICK, function(){
+		_loadRoot("P2020");
+	});
+	
+	$("li[id='liAll']").on(_CLICK, function(){
+		_load("P3020");
+	})
+	$("li[id='liHot']").on(_CLICK, function(){
+		_load("P3020");
+	})
+	$("li[id='liWeekNew']").on(_CLICK, function(){
+		_load("P5010");
+	})
+	$("#liShop").on(_CLICK, function(){
+		_load("P6080");
+	})
+}
+
+$(function(){
+	init();
+})
+
+function onLoad() {
+	var p = _Param();
+	if (p &&　p.init === true) {
+		function fnCloseStart() {
+			
+			var s = $("#start");
+			$("#start").removeClass("hide");
+			s.append("<img src='images/start-wawa.png' style='margin-top:10%; width:100px; height:300px; opacity:0;' />")
+
+			$(".ui-head,.wrapper,.ui-foot").removeClass("hide");
+			
+			s.find("img").ani({"margin-top":"70%", opacity:0.6}, 4500);
+			s.ani({opacity:0}, 4000, function(){
+				s.remove();
+			}, "ease-out-in")
+	
+		}
+		setTimeout(fnCloseStart, 5);
+	}
+	else {
+		$(".ui-head,.wrapper,.ui-foot").removeClass("hide");
+		$("#start").remove()
+	}
+}
+
+</script>
+
+
