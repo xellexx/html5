@@ -502,6 +502,8 @@ background-image: url(../images/logo.png); background-repeat:no-repeat; backgrou
 .P6051 li span { display:inline-block; width:35px; }
 .P6051 li input { margin-left: 20px; border:0 }
 
+.P6070 {padding-bottom: 20px;}
+
 /* 修改密码 P6071 */
 .P6071 { padding: 10px 0; color: #AAA;}
 .P6071 li input { border:0 }
