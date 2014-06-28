@@ -130,10 +130,18 @@ function onLoad() {
 
 			$(".ui-head,.wrapper,.ui-foot").css("display", "");
 			
-			s.find("img").ani({"margin-top":"70%", opacity:0.6}, 3500);
-			s.ani({opacity:0}, 3000, function(){
-				s.remove();
-			}, "ease-out-in")
+			//s.find("img").ani({"margin-top":"70%", opacity:0.6}, 3500);
+			//s.ani({opacity:0}, 3000, function(){
+			//	s.remove();
+			//}, "ease-out-in")
+			s.find("img").animate({"margin-top":"60%", opacity:0.6}, 3000);
+
+			setTimeout(			
+			function() {
+				s.fadeOut(1000, function(){
+					s.remove();
+				})
+			}, 2000);
 	
 		}
 		setTimeout(fnCloseStart, 1000);
