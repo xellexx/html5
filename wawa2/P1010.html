@@ -134,14 +134,14 @@ function onLoad() {
 			//s.ani({opacity:0}, 3000, function(){
 			//	s.remove();
 			//}, "ease-out-in")
-			s.find("img").animate({"margin-top":"60%", opacity:0.6}, 3000);
+			s.find("img").animate({"margin-top":"60%", opacity:0.7}, 3000);
 
 			setTimeout(			
 			function() {
-				s.fadeOut(1000, function(){
+				s.fadeOut(2000, function(){
 					s.remove();
 				})
-			}, 2000);
+			}, 1000);
 	
 		}
 		setTimeout(fnCloseStart, 1000);
