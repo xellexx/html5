@@ -1,0 +1,40 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<div class="ui-head">
+	<ul>
+    	<li class="left" onclick="_back();"><i class="icon-back"></i><s>返回</s></li>
+		<li class="title">关于娃娃</li>
+    	<li class="right"></li>
+    </ul>
+</div>
+
+<div class="wrapper" style="margin-bottom:0;">
+	<div class="ui-body P6074">
+        <img src="./images/img-about-wawa.png" />
+        <h1>软件版本V1.0</h1>
+        <div>
+        	<pre id="content"></pre>
+        </div>
+        <div id="btnService">
+        	服务条款<i class="a-right"></i>
+            <pre id="pService" class="hide">服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款服务条款</pre>
+        </div>
+        <div id="btnNotice">
+        	免责声明<i class="a-right"></i>
+            <pre id="pNotice" class="hide">免责声明免责声明免责声明免责声明免责声明免责声明免责声明免责声明免责声明免责声明免责声明免责声明免责声明免责声明</pre>
+        </div>
+    </div>
+</div>
+<script>
+$(function(){
+	var str = "";
+	for (var i=0; i<50; i++) {
+		str += "介绍文字";
+	}
+	$("#content").text(str);
+	
+	$("#btnService, #btnNotice").on(_CLICK, function(){
+		$(this).children("pre").slideToggle();
+		$(this).children("i").fadeToggle();
+	})
+})
+</script>

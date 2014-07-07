@@ -1,0 +1,108 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<div class="ui-head">
+	<ul>
+    	<li class="left" onclick="_back();"><i class="icon-back"></i><s>返回</s></li>
+		<li class="title">特卖场</li>
+    	<li class="right"><i class="icon-qr"></i></li>
+    </ul>
+</div>
+
+<div class="wrapper bg-grey">
+	<div class="ui-body P5040">
+    	<div class="top">
+            <img src="images/active-1.jpg" />
+        </div>
+        <div class="P5040-tag bg-foot">
+        	<i class="t"></i>
+        	<div><span>1折区</span><span>2折区</span><span>3折区</span><span>4折区</span><span>5折区</span><span>6折区</span><span>7折区</span><span>8折区</span></div>
+            <i class="b"></i>
+        </div>
+		<div id="wfCtn"><div id="waterfall"></div></div>
+    </div>
+</div>
+
+<div class="ui-foot">
+    <ul>
+        <li id="footHome"> <i class="icon-home"></i><s>首页</s> </li>
+        <li id="footSearch"> <i class="icon-search"></i><s>找美丽</s> </li>
+        <li id="footChart"> <i class="icon-chart"></i><s>购物车</s> </li>
+        <li id="footUser"> <i class="icon-user"></i><s>娃娃家</s> </li>
+        <li id="footGift" class="active"> <i class="icon-gift"></i><s>享惊喜</s> </li>
+    </ul>
+</div>
+
+<script>
+$(function(){
+	
+	setTimeout(P5040, 1000);
+		
+	$("#wfCtn").delegate(".wf_item_inner", _CLICK, function(){
+		_load("P3030");
+	})
+})
+function P5040() {
+
+	$("#wfCtn").html("");
+	$("#wfCtn").html("<div id='waterfall'></div>");
+
+	//获取商品列表
+	//列数
+	var waterfallColNum = 2;
+	
+	// 按需加载方式
+	var wf_page = 0;
+	$('#waterfall').waterfall({
+		//列宽度
+		colWidth: Math.floor($(window).innerWidth()/waterfallColNum-6),
+		
+		//一次载入的缓存中的元素个数
+		/*perNum : 10,*/
+		perNum : 20,
+
+		// 自定义跨域请求
+		ajaxFunc: function(success, error){
+			dt = [];
+			for (var i=0; i<20; i++) {
+				var d = {};
+				d.Code = 1;
+				d.Name = "衣服衣服衣服衣服衣服衣服衣服衣服衣服衣服衣服衣服衣服衣服衣服"
+				d.Image = "images/home-first.jpg";
+				d.CurrentPrice = 100;
+				d.Price = 50;
+				
+				dt.push(d);
+			}
+			
+			
+			success(dt);			
+		},
+
+		//每个画面元素的显示
+		createHtml: function(data){
+			var code = typeof(data.Code)=="string"?data.Code.trim():"";	
+			var name = typeof(data.Name)=="string"?data.Name.trim():"";
+			var url = typeof(data.Image)=="string"?data.Image.trim():"";
+
+			var cp = formatCurrency(data.CurrentPrice);
+			var p = "￥" + formatCurrency(data.Price);
+			
+			var html =  
+						'<div class="wf_item_inner" goodsCode="'+code+'">' +
+						  '<div class="wf_item_img"><img class="thumb_img"  src="'+ url +'" /></div>' +
+						  '<div class="tags"><span>通勤</span><span>通勤</span><span>通勤</span></div>' +
+						  '<pre class="desc" >'+ '<span>' + _RHS(name) + '</span><div>' +
+							((p===''||data.Price===0)?"":('<s>原价 '+_RHS(p)+'</s>')) + '<b>现价&nbsp;&nbsp;<s>￥</s><span>' + _RHS(cp) + '</span></b>' + 
+						  '</div></pre>' +
+						'</div>';
+						
+				  
+			return html;
+
+		},
+
+		imgUrlName: 'Image',
+		marginLeft: 4,
+		marginTop: 6,
+	});
+}
+</script>
