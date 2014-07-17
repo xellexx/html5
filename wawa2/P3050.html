@@ -192,7 +192,7 @@ function winScroll() {
 	inAni = false;
 }
 
-
+var index=0;
 function loadData() {
 	main_s = $(".P3050-frame-corner, .P3050-frame-main-pic, .P3050-frame-main-desc")
 	$(window).scroll(winScroll);
@@ -203,7 +203,10 @@ function loadData() {
 	var isLeft = false;
 	var z = 1;
 	var l=0, r=0;
-	for(var i=0; i<colloc.length; i++){
+	
+	if (colloc.length <= 0) return;
+	
+	var fnLoadItem = function(i) {
 		var e = $(colloc[i]);
 		
 		if (top_l < top_r) {
@@ -232,13 +235,38 @@ function loadData() {
 		}
 		
 		e.removeClass("hide");
+
+		var h = top_r
+		if (top_l > top_r) {
+			h = top_l;
+		}
+		$(".P3050").height(h+10);
+		
+		if (i < colloc.length-1) {
+			setTimeout(fnLoadList, 10);
+		}
 	}
 	
-	var h = top_r
-	if (top_l > top_r) {
-		h = top_l;
-	}
-	$(".P3050").height(h+10);
+	var index=0;
+	var fnLoadList = function() {
+		var img = $(colloc[index]).find("img");
+		imgReady(img.attr("src"), function(width,height){
+			fnLoadItem(index);
+			
+			index++;
+		}, null, function(){
+			var h = Math.floor((colloc_w-8)*2/3);
+			img.height(h);
+			
+			img.attr("src", "images/no-pic.png")
+			
+			fnLoadItem(index);
+			
+			index++;
+		})
+	};
+
+	fnLoadList();
 }
 </script>
 
