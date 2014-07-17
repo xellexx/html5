@@ -362,11 +362,11 @@ background-image: url(../images/icon-collect-on.png); background-repeat: no-repe
 .P3050-frame:before { position:absolute; display:block; content:''; background: rgb(210,212,211); }
 .P3050-frame.t { top:50px; left:0; right:0; height:20px;}
 .P3050-frame.t:before { top:10px; left:10px; right:10px; bottom:0;}
-.P3050-frame.b { bottom:44px; left:0; right:0; height:20px;}
+.P3050-frame.b { bottom:40px; left:0; right:0; height:20px;}
 .P3050-frame.b:before { top:0; left:10px; right:10px; bottom:10px;}
-.P3050-frame.l { top:50px; bottom:44px; left:0; width:20px;}
+.P3050-frame.l { top:50px; bottom:40px; left:0; width:20px;}
 .P3050-frame.l:before { top:10px; left:10px; right:0; bottom:10px; }
-.P3050-frame.r { top:50px; bottom:44px; right:0; width:20px;}
+.P3050-frame.r { top:50px; bottom:40px; right:0; width:20px;}
 .P3050-frame.r:before { top:10px; left:0; right:10px; bottom:10px; }
 .P3050-frame-corner { z-index:99999901; position:fixed; top:60px; left:10px; width:150px; height: 88px; background-color: rgb(234,229,226); background-image: url(../images/m.png); background-repeat:no-repeat; background-size: 100% 90%; }
 .P3050-frame-main-pic {z-index:99999901; position: fixed; right:4px; top:56px; width:40%; }
