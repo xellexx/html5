@@ -11,16 +11,16 @@
 
 	<div class="ui-body P3010">
     	<div class="search-bar">
-        	<input class="search-txt" type="search" placeholder="Search" /><a class="button search-btn">Go</a>
+        	<div><input id="txtSearch" class="search-txt" type="search" placeholder="Search" /><a id="btnSearch" class="button search-btn">Go</a></div>
         </div>
         <div class="search-list"> 
-        	<div class="search-list-item all">
+        	<div class="search-list-item tag all">
             	<span class="entry">全部商品 >></span>
             </div>
-            <div class="search-list-item hot">
+            <div class="search-list-item tag hot">
             	<span class="entry">爆款推荐 >></span>
             </div>
-            <div class="search-list-item new-one">
+            <div class="search-list-item tag new-one">
             	<span class="entry">最新单品 >></span>
             </div>
             <div class="search-list-item submenu" style="background-image: url(./images/search-4.png);">
@@ -46,7 +46,7 @@
                         <s>卫衣</s>
                     </li>
                 </ul>
-                <ul class="box1" >
+                <ul>
                     <li class="center">
                         <i style="background-image:url(./images/search-1-5.png);"></i>
                         <s>毛衫</s>
@@ -96,38 +96,137 @@
 <script>
 var m_inAni = false;
 $(function(){
-	
-	$(".submenu2 li").on(_CLICK, function(){
-		_load("P3020");
+	init();
+})
 
+function addSearchEvt() {
+	$(".P3010 #btnSearch").on(_CLICK, function(){
+		var txt = $("#txtSearch").val();
+		txt = txt?txt.trim():"";
+	
+		var p = {"txt": txt, "search": txt};
+		_load("P3020", p);
+	});
+}
+
+function addMenuEvt() {
+	
+	$(".P3010 .search-list .tag").on(_CLICK, function(){
+		var t = $(this);
+		var p = {};
+		if (t.hasClass("hot")) {
+			p.tag = "2"
+			p.txt = "爆款推荐"
+		} else if (t.hasClass("new-one")) {
+			p.tag = "1"
+			p.txt = "最新单品"
+		} else if (t.hasClass("all")) {
+			p.txt = "全部商品"
+		} 
+		
+		_load("P3020", p);
+	})
+
+	$(".P3010 .submenu2 li").on(_CLICK, function(){
+		
+		var p = {};
+				
+		p.cls1 = $(this).attr("_ID");	
+		p.cls1 = p.cls1?p.cls1:null;
+		p.txt = $(this).find("s").text();	
+		p.txt = p.txt?p.txt:null;
+		
+		_load("P3020", p);
 	})
 	
-	$(".submenu").on(_CLICK, function(){
+	$(".P3010 .submenu").on(_CLICK, function(){
 		if (m_inAni) return;
 		m_inAni = true;
 		
 		try {
-			var thisT = $(this);
-			if (thisT.attr("act")==="true") {
-				thisT.removeAttr("act")
-				$(".submenu2").slideUp("fast");
+			var thisT = $(this).next(".submenu2");
+			if (thisT.filter(":not(:hidden)").length>0) {
+				thisT.slideUp("fast");
 				return;
-			};
-			
-			var old = $(".submenu2");
-			if (old.length>0) {
-				old.slideUp("fast");
 			}
-			$(".submenu[act='true']").removeAttr("act");
 			
-			var tD = $(this).next(".submenu2");
-			thisT.attr("act", "true");
-			tD.slideDown("fast");
+			var oldT = $(".submenu2:not(:hidden)");
+			thisT.slideDown("fast");
+			oldT.slideUp("fast");
 		}
 		finally {
 			m_inAni = false;
 		}
 	})
-})
+}
+
+
+function init() {
+	$("#txtSearch").val("");
+	
+	//$(".search-list-item").remove();
+	$(".submenu, .submenu2").remove();
+	
+	addSearchEvt();
+}
+
+function showClass(result) {
+
+	if (!result || !result.Data) return;
+
+	var dt = result.Data;
+	
+	var sl = $(".search-list");
+	for (var i=0; i<dt.length; i++) {
+		var r = dt[i];
+		if (r.TopID != 0) continue;
+		
+		var subStr = "";
+		var subHtml = "";
+		var cnt=0;
+		for (var j=0; j<dt.length; j++) {
+			var s = dt[j];
+			if (s.TopID != r.ID) continue;
+			
+			if (cnt < 4) {
+				if (cnt > 0) subStr += " / ";
+				subStr += s.Name;
+			}
+			
+			if (cnt % 4 == 0) {
+				if (cnt > 0) subHtml += "</ul>";
+				subHtml += "<ul>";
+			}
+			
+			cnt++;
+			
+			subHtml += 
+					"<li class=\"center\" _ID="+s.ID+">"+
+                        "<i style=\"background-image:url("+_Config.Home+s.Image+");\"></i>"+
+                        "<s>"+_RHS(s.Name)+"</s>"+
+                    "</li>";
+		}
+		
+		sl.append(
+            "<div class=\"search-list-item submenu\" style=\"background-image: url("+_Config.Home+r.Image+");\">"+
+            	"<span class=\"menu\">"+_RHS(r.Name)+"</span>"+
+                "<span class=\"item\">"+_RHS(subStr)+"</span>"+
+            "</div>"+
+			"<div class=\"search-list-item submenu2 hide\">"+subHtml+
+			"</div>"
+		);
+	}
+	
+	addMenuEvt();
+}
+
+function showTag() {
+}
+
+function onLoad() {
+
+	_IF.GetCls0Data(showClass, null);
+	//_IF.GetTag(showTag, null);
+}
 </script>
 

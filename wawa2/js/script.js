@@ -19,7 +19,7 @@ function _footClick() {
 				_loadRoot("P6000");
 			} else if (this.id === "footGift") {
 				_loadRoot("P5010");
-			}			
+			}
 		}
 	)
 }
@@ -196,4 +196,56 @@ function _closeSub(selector, shadow) {
 	$(selector).addClass("hide");
 	$(".ui-head, .wrapper, .ui-foot").removeClass("blur");
 	$(shadow).addClass("hide");
+}
+
+var _popHtml = 
+		"<div class=\"ui-pop-cover\">"+
+			"<div class=\"ui-pop-box\">"+
+				"<pre></pre>"+
+				"<ul>"+
+					"<li>确 认</li>"+
+					"<li>取 消</li>"+
+				"</ul>"+
+			"</div>"+
+		"</div>";
+
+function _popWin(isAlert, txt, fn) {
+	var popwin = $(_popHtml);
+	popwin.find("pre").text(txt);
+
+	popwin.find("li:first-child").on(_CLICK, function(){
+		_closePop();
+		try {
+			typeof(fn)==="function" && fn(true);
+		} catch(ex) {}
+	});
+		
+	if (isAlert===true) {
+		popwin.find("li:last-child").remove();
+		return;
+	}
+	
+	popwin.find("li:last-child").on(_CLICK, function(){
+		_closePop();
+		
+		try {
+			typeof(fn)==="function" && fn(false);
+		} catch(ex) {}
+	});
+	
+	$(".ui-head, .wrapper, .ui-foot").addClass("blur");
+	$("body").append(popwin);
+}
+
+function _closePop() {
+	$(".ui-head, .wrapper, .ui-foot").removeClass("blur");
+	$(".ui-pop-cover").remove();
+}
+
+function _Alert(txt, fn) {
+	_popWin(true, txt, fn);
+}
+
+function _Confirm(txt, fn) {
+	_popWin(false, txt, fn);
 }

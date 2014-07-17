@@ -130,7 +130,7 @@
 
 <div class="ui-foot P3030-foot">
     <ul>
-        <li class="goods-detail-clothes"> <i><span> 搭配</span></i> </li>
+        <li id="btnWith" class="goods-detail-clothes"> <i><span> 搭配</span></i> </li>
         <li id="btnCart" class="goods-detail-cart"> <i><span> 加入购物车</span></i> </li>
         <li id="btnBuyNow" class="goods-detail-buynow"> <i><span> 立即购买</span></i> </li>
     </ul>
@@ -265,6 +265,10 @@ $(function(){
 	$("#btnShareCancel").on(_CLICK, function(){
 		_closeSub(".P3030-share-sub-win");
 	})
+	
+	$("#btnWith").on(_CLICK, function(){
+		_load("P3050");
+	})
 
 	$("#btnCart").on(_CLICK, function(){
 		$("#btnIntoCart").removeClass("hide");
@@ -284,7 +288,10 @@ $(function(){
 	
 	$("#btnIntoCart").on(_CLICK, function(){
 		_closeSub(".P3030-sub-win");
-		_load("P4010");
+		
+		_Confirm("是否前往购物车？", function(rtn){
+			if (rtn===true) _load("P4010");
+		})
 	})
 	
 	$("#btnIntoBuyNow").on(_CLICK, function(){

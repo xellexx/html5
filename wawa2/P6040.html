@@ -9,8 +9,8 @@
 
 <div class="P6040-tab">
     <ul>
-        <li class="no-pay"><div><span>1</span></div><s>待付款</s></li>
-        <li class="no-recieve active"><div><span>2</span></div><s>待收货</s></li>
+        <li class="no-pay active"><div><span>1</span></div><s>待付款</s></li>
+        <li class="no-recieve"><div><span>2</span></div><s>待收货</s></li>
         <li class="recieved"><div></div><s>已收货</s></i></li>
         <li class="return"><div></div><s>退换货</s></li>
     </ul>
@@ -18,26 +18,17 @@
 
 <div class="wrapper bg-grey" style=" margin-top:116px; margin-bottom:0;">
 	<div class="ui-body P6040">
-    	<ul>
+    	<ul id="ulNoPay">
         	<li>
             	<div class="ctn">
                     <div class="status">
-                    	订单状态：待收货
+                    	订单状态：待付款
+                        <span>申请退换货&gt;</span>
                     </div>
                     <div class="title">
                     	<span>订单号：2014023421143243</span>
                         <span class="f_right">2014-05-30　11:40</span>
                     </div>
-                    <div class="desc">
-                        <img src="images/goods-demo.png" />
-                        <div class="info">
-                            <div class="name">花卉人物印花斜肩不规则T恤</div>
-                            <div>规格: <span>白色 / 尺码： S</span></div>
-                            <div>价格: <s class="s-price">￥ 8888.00</s></div>
-                            <div>数量: <span>1</span></div>
-                        </div>
-                    </div>
-                    
                     <div class="desc">
                         <img src="images/goods-demo.png" />
                         <div class="info">
@@ -70,22 +61,6 @@
                     </div>
                     <div id="switchOrder" class="open-close b-open-a">
                     	<span><i></i>全部商品</span>
-                    </div>
-                    
-                    <div class="send-info">
-                    	<div>
-                            <span>2014-05-06 10:00　上海青浦收件员已收件上海青浦收件员已收件上海青浦收件员已收件上海青浦收件员已收件上海青浦收件员已收件</span>
-                            <span>2014-05-06 12:00　上海中转站已发出</span>
-                            <span>2014-05-07 08:00　上海虹口站已收入</span>
-                            <span>2014-05-07 10:00　包裹正在分拣中</span>
-                            <span>2014-05-07 15:00　虹口五部派件员派件中</span>
-                        </div>
-                        <div class="btn">
-                        	<span>申请退换货<i class="a-right"></i></span>
-                        </div>
-                    </div>
-                    <div id="switchSendInfo" class="open-close b-open">
-                    	<span><i></i>查看物流</span>
                     </div>
                     <div class="r-p">
                         实际支付: <s class="s-price">￥ 8888.00</s>
@@ -100,21 +75,12 @@
             	<div class="ctn">
                     <div class="status">
                     	订单状态：待收货
+                        <span>申请退换货&gt;</span>
                     </div>
                     <div class="title">
                     	<span>订单号：2014023421143243</span>
                         <span class="f_right">2014-05-30　11:40</span>
                     </div>
-                    <div class="desc">
-                        <img src="images/goods-demo.png" />
-                        <div class="info">
-                            <div class="name">花卉人物印花斜肩不规则T恤</div>
-                            <div>规格: <span>白色 / 尺码： S</span></div>
-                            <div>价格: <s class="s-price">￥ 8888.00</s></div>
-                            <div>数量: <span>1</span></div>
-                        </div>
-                    </div>
-                    
                     <div class="desc">
                         <img src="images/goods-demo.png" />
                         <div class="info">
@@ -140,26 +106,261 @@
                     	<span><i></i>全部商品</span>
                     </div>
                     
-                    <div class="send-info">
-                    	<div>
-                            <span>2014-05-06 10:00　上海青浦收件员已收件</span>
-                            <span>2014-05-06 12:00　上海中转站已发出</span>
-                            <span>2014-05-07 08:00　上海虹口站已收入</span>
-                            <span>2014-05-07 10:00　包裹正在分拣中</span>
-                            <span>2014-05-07 15:00　虹口五部派件员派件中</span>
-                        </div>
-                        <div class="btn">
-                        	<span>申请退换货<i class="a-right"></i></span>
-                        </div>
-                    </div>
-                    <div id="switchSendInfo" class="open-close b-open">
-                    	<span><i></i>查看物流</span>
-                    </div>
                     <div class="r-p">
                         实际支付: <s class="s-price">￥ 8888.00</s>
                     </div>
                     <div>
                     	<a class="button">去付款</a>
+                    </div>
+            	</div>
+            </li>
+        </ul>
+        
+        <ul id="ulPayed" style="display:none">
+        	<li>
+            	<div class="ctn">
+                    <div class="status">
+                    	订单状态：已收货
+                        <span>申请退换货&gt;</span>
+                    </div>
+                    <div class="title">
+                    	<span>订单号：2014023421143243</span>
+                        <span class="f_right">2014-05-30　11:40</span>
+                    </div>
+                    <div class="desc">
+                        <img src="images/goods-demo.png" />
+                        <div class="info">
+                            <div class="name">花卉人物印花斜肩不规则T恤</div>
+                            <div>规格: <span>白色 / 尺码： S</span></div>
+                            <div>价格: <s class="s-price">￥ 8888.00</s></div>
+                            <div>数量: <span>1</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="more">
+                    <div class="desc">
+                        <img src="images/goods-demo.png" />
+                        <div class="info">
+                            <div class="name">花卉人物印花斜肩不规则T恤</div>
+                            <div>规格: <span>白色 / 尺码： S</span></div>
+                            <div>价格: <s class="s-price">￥ 8888.00</s></div>
+                            <div>数量: <span>1</span></div>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <img src="images/goods-demo.png" />
+                        <div class="info">
+                            <div class="name">花卉人物印花斜肩不规则T恤</div>
+                            <div>规格: <span>白色 / 尺码： S</span></div>
+                            <div>价格: <s class="s-price">￥ 8888.00</s></div>
+                            <div>数量: <span>1</span></div>
+                        </div>
+                    </div>
+                    </div>
+                    <div id="switchOrder" class="open-close b-open-a">
+                    	<span><i></i>全部商品</span>
+                    </div>
+                    <div class="r-p">
+                        实际支付: <s class="s-price">￥ 8888.00</s>
+                        <span>查看物流&gt;</span>
+                    </div>
+            	</div>
+            </li>
+        </ul>
+        <ul id="ulRecieved" style="display:none">
+        	<li>
+            	<div class="ctn">
+                    <div class="status">
+                    	订单状态：待收货
+                        <span>申请退换货&gt;</span>
+                    </div>
+                    <div class="title">
+                    	<span>订单号：2014023421143243</span>
+                        <span class="f_right">2014-05-30　11:40</span>
+                    </div>
+                    <div class="desc">
+                        <img src="images/goods-demo.png" />
+                        <div class="info">
+                            <div class="name">花卉人物印花斜肩不规则T恤</div>
+                            <div>规格: <span>白色 / 尺码： S</span></div>
+                            <div>价格: <s class="s-price">￥ 8888.00</s></div>
+                            <div>数量: <span>1</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="more">
+                    <div class="desc">
+                        <img src="images/goods-demo.png" />
+                        <div class="info">
+                            <div class="name">花卉人物印花斜肩不规则T恤</div>
+                            <div>规格: <span>白色 / 尺码： S</span></div>
+                            <div>价格: <s class="s-price">￥ 8888.00</s></div>
+                            <div>数量: <span>1</span></div>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <img src="images/goods-demo.png" />
+                        <div class="info">
+                            <div class="name">花卉人物印花斜肩不规则T恤</div>
+                            <div>规格: <span>白色 / 尺码： S</span></div>
+                            <div>价格: <s class="s-price">￥ 8888.00</s></div>
+                            <div>数量: <span>1</span></div>
+                        </div>
+                    </div>
+                    </div>
+                    <div id="switchOrder" class="open-close b-open-a">
+                    	<span><i></i>全部商品</span>
+                    </div>
+                    <div class="r-p">
+                        实际支付: <s class="s-price">￥ 8888.00</s>
+                    </div>
+            	</div>
+            </li>
+        </ul>
+        <ul id="ulBack" style="display:none">
+        	<li>
+            	<div class="ctn">
+                    <div class="status">
+                    	订单状态：退换货
+                        <span>待处理</span>
+                    </div>
+                    <div class="title">
+                    	<span>订单号：2014023421143243</span>
+                        <span class="f_right">2014-05-30　11:40</span>
+                    </div>
+                    <div class="desc">
+                        <img src="images/goods-demo.png" />
+                        <div class="info">
+                            <div class="name">花卉人物印花斜肩不规则T恤</div>
+                            <div>规格: <span>白色 / 尺码： S</span></div>
+                            <div>价格: <s class="s-price">￥ 8888.00</s></div>
+                            <div>数量: <span>1</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="more">
+                    <div class="desc">
+                        <img src="images/goods-demo.png" />
+                        <div class="info">
+                            <div class="name">花卉人物印花斜肩不规则T恤</div>
+                            <div>规格: <span>白色 / 尺码： S</span></div>
+                            <div>价格: <s class="s-price">￥ 8888.00</s></div>
+                            <div>数量: <span>1</span></div>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <img src="images/goods-demo.png" />
+                        <div class="info">
+                            <div class="name">花卉人物印花斜肩不规则T恤</div>
+                            <div>规格: <span>白色 / 尺码： S</span></div>
+                            <div>价格: <s class="s-price">￥ 8888.00</s></div>
+                            <div>数量: <span>1</span></div>
+                        </div>
+                    </div>
+                    </div>
+                    <div id="switchOrder" class="open-close b-open-a">
+                    	<span><i></i>全部商品</span>
+                    </div>
+                    <div class="r-p">
+                        实际支付: <s class="s-price">￥ 8888.00</s>
+                    </div>
+            	</div>
+            </li>
+            
+            <li>
+            	<div class="ctn">
+                    <div class="status">
+                    	订单状态：退换货
+                        <span>处理中</span>
+                    </div>
+                    <div class="title">
+                    	<span>订单号：2014023421143243</span>
+                        <span class="f_right">2014-05-30　11:40</span>
+                    </div>
+                    <div class="desc">
+                        <img src="images/goods-demo.png" />
+                        <div class="info">
+                            <div class="name">花卉人物印花斜肩不规则T恤</div>
+                            <div>规格: <span>白色 / 尺码： S</span></div>
+                            <div>价格: <s class="s-price">￥ 8888.00</s></div>
+                            <div>数量: <span>1</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="more">
+                    <div class="desc">
+                        <img src="images/goods-demo.png" />
+                        <div class="info">
+                            <div class="name">花卉人物印花斜肩不规则T恤</div>
+                            <div>规格: <span>白色 / 尺码： S</span></div>
+                            <div>价格: <s class="s-price">￥ 8888.00</s></div>
+                            <div>数量: <span>1</span></div>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <img src="images/goods-demo.png" />
+                        <div class="info">
+                            <div class="name">花卉人物印花斜肩不规则T恤</div>
+                            <div>规格: <span>白色 / 尺码： S</span></div>
+                            <div>价格: <s class="s-price">￥ 8888.00</s></div>
+                            <div>数量: <span>1</span></div>
+                        </div>
+                    </div>
+                    </div>
+                    <div id="switchOrder" class="open-close b-open-a">
+                    	<span><i></i>全部商品</span>
+                    </div>
+                    <div class="r-p">
+                        实际支付: <s class="s-price">￥ 8888.00</s>
+                    </div>
+            	</div>
+            </li>
+            
+            <li>
+            	<div class="ctn">
+                    <div class="status">
+                    	订单状态：退换货
+                        <span>已退款</span>
+                    </div>
+                    <div class="title">
+                    	<span>订单号：2014023421143243</span>
+                        <span class="f_right">2014-05-30　11:40</span>
+                    </div>
+                    <div class="desc">
+                        <img src="images/goods-demo.png" />
+                        <div class="info">
+                            <div class="name">花卉人物印花斜肩不规则T恤</div>
+                            <div>规格: <span>白色 / 尺码： S</span></div>
+                            <div>价格: <s class="s-price">￥ 8888.00</s></div>
+                            <div>数量: <span>1</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="more">
+                    <div class="desc">
+                        <img src="images/goods-demo.png" />
+                        <div class="info">
+                            <div class="name">花卉人物印花斜肩不规则T恤</div>
+                            <div>规格: <span>白色 / 尺码： S</span></div>
+                            <div>价格: <s class="s-price">￥ 8888.00</s></div>
+                            <div>数量: <span>1</span></div>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <img src="images/goods-demo.png" />
+                        <div class="info">
+                            <div class="name">花卉人物印花斜肩不规则T恤</div>
+                            <div>规格: <span>白色 / 尺码： S</span></div>
+                            <div>价格: <s class="s-price">￥ 8888.00</s></div>
+                            <div>数量: <span>1</span></div>
+                        </div>
+                    </div>
+                    </div>
+                    <div id="switchOrder" class="open-close b-open-a">
+                    	<span><i></i>全部商品</span>
+                    </div>
+                    <div class="r-p">
+                        实际支付: <s class="s-price">￥ 8888.00</s>
                     </div>
             	</div>
             </li>
@@ -170,8 +371,20 @@
 <script>
 $(function(){
 	$(".P6040-tab li").on(_CLICK, function(){
-		$(this).addClass("active");
-		$(this).siblings().removeClass("active");
+		var t = $(this);
+		t.addClass("active");
+		t.siblings().removeClass("active");
+		
+		$(".P6040 > ul").hide();
+		if (t.hasClass("no-pay")) {
+			$("#ulNoPay").show();
+		} else if (t.hasClass("no-recieve")) {
+			$("#ulPayed").show();
+		} else if (t.hasClass("recieved")) {
+			$("#ulRecieved").show();
+		} else if (t.hasClass("return")) {
+			$("#ulBack").show();
+		}
 	});
 	
 	$(".P6040 div[id='switchOrder']").on(_CLICK, function(){
@@ -181,11 +394,8 @@ $(function(){
 		t.siblings(".more").slideToggle();
 	});
 	
-	$(".P6040 div[id='switchSendInfo']").on(_CLICK, function(){
-		var t = $(this)
-		t.toggleClass("b-open");
-		t.toggleClass("b-close");
-		t.siblings(".send-info").slideToggle();
+	$(".P6040 .status span").on(_CLICK, function(){
+		_load("P6041");
 	});
 });
 

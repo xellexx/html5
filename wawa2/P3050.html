@@ -1,0 +1,244 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<div class="ui-head">
+	<ul>
+    	<li class="left" onclick="_back();"><i class="icon-back"></i><s>返回</s></li>
+		<li class="title">搭配</li>
+    	<li class="right"><i class="icon-sort"></i></li>
+    </ul>
+</div>
+
+<div class="P3050-frame t"></div>
+<div class="P3050-frame b"></div>
+<div class="P3050-frame l"></div>
+<div class="P3050-frame r"></div>
+<div class="P3050-frame-corner"></div>
+<img class="P3050-frame-main-pic" style="display:none;"/>
+<div class="P3050-frame-main-desc">
+    <p>通勤修身两件式连通勤修身一二三四五六七八九十一二三四五六七八九十</p>
+    <div class="price"><b>￥100.00</b></div>
+</div>
+
+<div class="wrapper" style="background-color: rgb(234,229,226);">
+	<div class="ui-body P3050">
+        <div class="colloc hide">
+        	<img src="images/colloc.png" />
+            <div class="txt" style=" text-align:right;">
+                <p class="desc">通勤修身两件式连通勤修身一二三四五六七八九十一二三四五六七八九十</p>
+                <div class="price"><b>￥100.00</b></div>
+            </div>
+        </div>
+        
+        <div class="colloc hide">
+        	<img src="images/colloc.png" />
+            <div class="txt" style=" text-align:right;">
+                <p class="desc">通勤修身两件式连通勤修身一二三四五六七八九十一二三四五六七八九十</p>
+                <div class="price"><b>￥100.00</b></div>
+            </div>
+        </div>
+        
+        <div class="colloc hide">
+        	<img src="images/colloc.png" />
+            <div class="txt" style=" text-align:right;">
+                <p class="desc">通勤修身两件式连通勤修身一二三四五六七八九十一二三四五六七八九十</p>
+                <div class="price"><b>￥100.00</b></div>
+            </div>
+        </div>
+        
+        <div class="colloc hide">
+        	<img src="images/colloc.png" />
+            <div class="txt" style=" text-align:right;">
+                <p class="desc">通勤修身两件式连通勤修身一二三四五六七八九十一二三四五六七八九十</p>
+                <div class="price"><b>￥100.00</b></div>
+            </div>
+        </div>
+        
+        <div class="colloc hide">
+        	<img src="images/colloc.png" />
+            <div class="txt" style=" text-align:right;">
+                <p class="desc">通勤修身两件式连通勤修身一二三四五六七八九十一二三四五六七八九十</p>
+                <div class="price"><b>￥100.00</b></div>
+            </div>
+        </div>
+        
+        <div class="colloc hide">
+        	<img src="images/colloc.png" />
+            <div class="txt" style=" text-align:right;">
+                <p class="desc">通勤修身两件式连通勤修身一二三四五六七八九十一二三四五六七八九十</p>
+                <div class="price"><b>￥100.00</b></div>
+            </div>
+        </div>
+        
+        <div class="colloc hide">
+        	<img src="images/colloc.png" />
+            <div class="txt" style=" text-align:right;">
+                <p class="desc">通勤修身两件式连通勤修身一二三四五六七八九十一二三四五六七八九十</p>
+                <div class="price"><b>￥100.00</b></div>
+            </div>
+        </div>
+        
+        <div class="colloc hide">
+        	<img src="images/colloc.png" />
+            <div class="txt" style=" text-align:right;">
+                <p class="desc">通勤修身两件式连通勤修身一二三四五六七八九十一二三四五六七八九十</p>
+                <div class="price"><b>￥100.00</b></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="ui-foot">
+    <ul>
+        <li id="footHome"> <i class="icon-home"></i><s>首页</s> </li>
+        <li id="footSearch"> <i class="icon-search"></i><s>找美丽</s> </li>
+        <li id="footChart"> <i class="icon-chart"></i><s>购物车</s> </li>
+        <li id="footUser"> <i class="icon-user"></i><s>娃娃家</s> </li>
+        <li id="footGift"> <i class="icon-gift"></i><s>享惊喜</s> </li>
+    </ul>
+</div>
+
+
+
+<script>
+var main_pic;
+var main_desc;
+var main_corner;
+var main_desc;
+var top_l, top_r, top_a, colloc_w;
+var main_s;
+$(function(){
+	colloc_w = Math.floor((window.innerWidth - 40)*0.5);
+	
+	main_corner = $(".P3050-frame-corner");
+	main_corner.width((window.innerWidth - 40)*0.45);
+	var corner_h = main_corner.width()/2
+	main_corner.height(corner_h);
+
+})
+
+function onLoad() {
+	var corner_h = main_corner.width()/2
+	main_pic = $(".P3050-frame-main-pic");
+	main_desc = $(".P3050-frame-main-desc");
+	var main_w = window.innerWidth - 20 - main_corner.width();
+	main_pic.width(main_w);
+
+	main_desc.css("top", corner_h+10+50+"px");
+	main_desc.width(main_corner.width()-10-6);
+	
+	top_l = Math.floor(main_desc.offset().top + main_desc.height() - 50 + 30);
+		
+	var main_src = "images/yi.png";
+	imgReady(main_src, function(width,height){
+		h = height*main_w/width;
+		
+		main_pic.attr("src", main_src);
+		main_pic.height(h);
+		main_pic.show();
+		
+		top_r = Math.floor(main_pic.offset().top + h) - 50 + 30;
+		
+		top_a = top_r;
+		if (top_l < top_r) top_a = top_l;
+
+		loadData();
+	}, null, function(){
+		top_r = 50;
+		
+		top_a = top_r;
+		if (top_l < top_r) top_a = top_l;
+		
+		loadData();
+	})
+	
+}
+
+var isHide = false;
+var inAni = false;
+function winScroll() {
+
+	if (inAni) return;
+	
+	var st = $(this).scrollTop();
+	if (isHide === false) {
+		if (st < (30+20)) return;
+		
+		inAni = true;
+
+		$("body").animate({scrollTop: top_a-20}, "fast", function(){
+			main_s.fadeOut("fast", function(){
+				isHide = true;
+				inAni = false;
+			});
+		});
+		
+		return;
+	} else {
+		
+		if (st > (top_a-20-20)) return;		
+		
+		inAni = true;
+
+		$("body").animate({scrollTop: 0}, "fast", function(){
+			main_s.fadeIn("fast", function(){
+				isHide = false;
+				inAni = false;
+			});
+		});
+		
+		return;
+	}
+	
+	inAni = false;
+}
+
+
+function loadData() {
+	main_s = $(".P3050-frame-corner, .P3050-frame-main-pic, .P3050-frame-main-desc")
+	$(window).scroll(winScroll);
+	
+	var colloc = $(".colloc");
+	colloc.width(colloc_w);
+	
+	var isLeft = false;
+	var z = 1;
+	var l=0, r=0;
+	for(var i=0; i<colloc.length; i++){
+		var e = $(colloc[i]);
+		
+		if (top_l < top_r) {
+			isLeft = true;
+			l++;
+		} else {
+			isLeft = false;
+			r++;
+		}
+		
+		if (isLeft) {
+			e.css("top", top_l+"px");
+			e.css("left", (l%2==1)?"22px":"24px");
+			top_l += e.height();
+		} else {
+			e.css("top", top_r+"px");
+			e.css("right", (r%2==1)?"22px":"24px");
+			top_r += e.height();
+			e.css("text-align", "right");
+		}
+		e.css("z-index", z++);
+		
+		if (i == colloc.length-1) {
+			e.css("text-align", "");
+			e.find(".txt").css("width", "100%");
+		}
+		
+		e.removeClass("hide");
+	}
+	
+	var h = top_r
+	if (top_l > top_r) {
+		h = top_l;
+	}
+	$(".P3050").height(h+10);
+}
+</script>
+
