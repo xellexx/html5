@@ -278,9 +278,8 @@ background-image: url(../images/icon-collect-on.png); background-repeat: no-repe
 .P3030 .goods-entrys div .a-c-down { top: 14px; right: 18px; height: 6px; width: 12px; }
 .P3030 .goods-entrys div .icon-vip { top: 8px; left: 6px; height: 14px; width: 16px; }
 .P3030 .goods-entrys div .icon-broad-cast { top: 8px; left: 7px; height: 14px; width: 15px; }
-.P3030 .goods-entrys div span { position:absolute; display:inline-block; left:26px; top:7px; }
-.P3030 .goods-entrys div span.text { overflow:hidden; color:grey; width: 160px; left:85px; top:7px; }
-.P3030 .goods-entrys div span.goto { content:'>>'; left:auto; right:15px; top:7px;  }
+.P3030 .goods-entrys div span { position:absolute; display:inline-block; left:26px; top:8px; }
+.P3030 .goods-entrys div span.text { overflow:hidden; color:grey; width: 160px; left:85px; top:8px; }
 .P3030 .goods-entrys div.blank { background: #FFF; height: 28px; }
 
 .goods-tab { padding: 0 15px; border-bottom:1px solid #FFDDDD; }
