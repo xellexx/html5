@@ -335,8 +335,8 @@ background-image: url(../images/icon-collect-on.png); background-repeat: no-repe
 .P3030-sub-win .sub-goods-type { border-top:1px solid #FFDDDD; border-bottom:1px solid #FFDDDD; }
 .P3030-sub-win .sub-goods-type:last-child { border:0; }
 .P3030-sub-win .sub-goods-type .type-row {padding-top: 6px;}
-.P3030-sub-win .sub-goods-type span { display:inline-block; min-width:26px; text-align:center; padding:4px 12px; border:1px solid #AAA; margin: 2px 6px 6px 0; }
-.P3030-sub-win .sub-goods-type span.selected { border:2px solid #CA3F66; padding:1px 10px; background: url(../images/icon-goods-type-selected.png) no-repeat bottom right; background-size:15px 15px;}
+.P3030-sub-win .sub-goods-type span { display:inline-block; min-width:26px; text-align:center; padding:4px 12px; border:1px solid #AAA; margin: 2px 6px 6px 0; line-height:16px; }
+.P3030-sub-win .sub-goods-type span.selected { border:2px solid #CA3F66; padding:3px 11px; background: url(../images/icon-goods-type-selected.png) no-repeat bottom right; background-size:15px 15px;}
 .P3030-sub-win .sub-goods-cnt .type-row { position:relative; padding-top: 20px; font-size:12px;}
 .P3030-sub-win .sub-goods-cnt s { display:inline-block; margin-right:6px;}
 
